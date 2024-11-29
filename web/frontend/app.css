@@ -1,0 +1,84 @@
+.main-section{
+    display: flex;
+    gap:30px ;
+    width: 100%;
+}
+.sidebar {
+    width: 200px;
+    height: 600px;
+    background-color: #510a32;
+    color: white;
+    transition: width 0.3s;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+.sidebar .toggle-btn {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul.menu {
+    list-style: none;
+    padding-top: 20px;
+}
+
+.sidebar ul.menu li {
+    padding: 0;
+    text-align: left;
+}
+
+.sidebar ul.menu li .ancer-class {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+}
+
+.sidebar ul.menu li .ancer-class:hover ,
+.sidebar ul.menu li .ancer-class.active {
+    background-color: #79335b;
+}
+
+.menu i {
+    font-size: 18px;
+    position: relative;
+    left: 5px;
+}
+
+.menu span {
+    margin-left: 5px;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar.collapsed .menu li  span {
+    display: none;
+}
+.content {
+        position: relative;
+        transform: translate(-80%);
+        left: 50%;
+        top: -170px;
+        width:200px;
+        transition:  color 0.5s ease;      
+    }
+    .content:hover{
+        color: #510a32;
+        text-shadow: rgb(226, 115, 159) 1px 0 10px;
+   }

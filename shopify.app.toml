@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
+application_url = "https://recommendation-creative-useful-r.trycloudflare.com"
+embedded = true
+name = "lean-policy-app"
+handle = "lean-policy-app-3"
+
+[webhooks]
+api_version = "2024-10"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,read_products,read_orders"
+
+[auth]
+redirect_urls = [
+  "https://recommendation-creative-useful-r.trycloudflare.com/auth/callback",
+  "https://recommendation-creative-useful-r.trycloudflare.com/auth/shopify/callback",
+  "https://recommendation-creative-useful-r.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "fruitfullsupply.myshopify.com"
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true

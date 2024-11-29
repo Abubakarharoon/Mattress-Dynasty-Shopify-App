@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://recommendation-creative-useful-r.trycloudflare.com"
+application_url = "https://guinea-cross-aberdeen-court.trycloudflare.com"
 embedded = true
 name = "lean-policy-app"
 handle = "lean-policy-app-3"
@@ -15,9 +15,9 @@ scopes = "write_products,read_products,read_orders"
 
 [auth]
 redirect_urls = [
-  "https://recommendation-creative-useful-r.trycloudflare.com/auth/callback",
-  "https://recommendation-creative-useful-r.trycloudflare.com/auth/shopify/callback",
-  "https://recommendation-creative-useful-r.trycloudflare.com/api/auth/callback"
+  "https://guinea-cross-aberdeen-court.trycloudflare.com/auth/callback",
+  "https://guinea-cross-aberdeen-court.trycloudflare.com/auth/shopify/callback",
+  "https://guinea-cross-aberdeen-court.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

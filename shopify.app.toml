@@ -1,29 +1,29 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://guinea-cross-aberdeen-court.trycloudflare.com"
+application_url = "https://stays-degrees-triumph-published.trycloudflare.com"
 embedded = true
 name = "lean-policy-app"
 handle = "lean-policy-app-3"
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "https-quickstart-0cb4d6bf.myshopify.com"
+include_config_on_deploy = true
 
 [webhooks]
 api_version = "2024-10"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products,read_products,read_orders"
+scopes = "read_orders,read_products,write_products,read_inventory,write_inventory"
 
 [auth]
 redirect_urls = [
-  "https://guinea-cross-aberdeen-court.trycloudflare.com/auth/callback",
-  "https://guinea-cross-aberdeen-court.trycloudflare.com/auth/shopify/callback",
-  "https://guinea-cross-aberdeen-court.trycloudflare.com/api/auth/callback"
+  "https://stays-degrees-triumph-published.trycloudflare.com/auth/callback",
+  "https://stays-degrees-triumph-published.trycloudflare.com/auth/shopify/callback",
+  "https://stays-degrees-triumph-published.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
 embedded = false
-
-[build]
-dev_store_url = "fruitfullsupply.myshopify.com"
-automatically_update_urls_on_dev = true
-include_config_on_deploy = true

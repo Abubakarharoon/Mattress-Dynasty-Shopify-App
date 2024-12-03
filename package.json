@@ -12,8 +12,14 @@
     "deploy": "shopify app deploy"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/icons-material": "^6.1.9",
+    "@mui/material": "^6.1.9",
+    "@shopify/shopify-api": "^11.6.0",
     "antd": "^5.22.2",
     "chart.js": "^4.4.6",
+    "cors": "^2.8.5",
     "react-chartjs-2": "^5.2.0"
   },
   "author": "DELL",

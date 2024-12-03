@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-
 export function Navigationbar() {
   // State to track whether the sidebar is collapsed or not
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -19,28 +18,30 @@ export function Navigationbar() {
       </button>
       <ul className="menu">
         <li>
+       
           <NavLink to="/" className="ancer-class">
-            <i className="fa-solid fa-house"></i><span>Home</span>
+          <i className="fa-solid fa-house"></i><span>  Home</span>
           </NavLink>
         </li>
         <li>
           <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-envelope"></i><span>Emails</span>
+          <i className="fa-solid fa-envelope"></i><span>Products</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-chart-column"></i><span>Charts</span>
+          <NavLink to="/inventory" className="ancer-class">
+          <i className="fa-solid fa-chart-column"></i><span>Inventory</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-gem"></i><span>Premium</span>
+          <NavLink to="/premium" className="ancer-class">
+           <i className="fa-solid fa-gem"></i><span>Premium</span>
           </NavLink>
         </li>
+    
         <li>
-          <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+          <NavLink to="/logout" className="ancer-class">
+         <i className="fa-solid fa-right-from-bracket"></i><span>Logoutt </span>
           </NavLink>
         </li>
       </ul>

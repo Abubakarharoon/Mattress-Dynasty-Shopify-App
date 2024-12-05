@@ -6,7 +6,7 @@
 .sidebar {
     width: 200px;
     height: 600px;
-    background-color: #510a32;
+    background-color: #95bf47;
     color: white;
     transition: width 0.3s;
     overflow: hidden;
@@ -49,7 +49,7 @@
 
 .sidebar ul.menu li .ancer-class:hover ,
 .sidebar ul.menu li .ancer-class.active {
-    background-color: #79335b;
+    background-color: #64943e;
 }
 
 .menu i {
@@ -79,6 +79,18 @@
         transition:  color 0.5s ease;      
     }
     .content:hover{
-        color: #510a32;
-        text-shadow: rgb(226, 115, 159) 1px 0 10px;
+        color: #64943e;
+        text-shadow: #64943e 1px 0 10px;
+   }
+   .d-flexx{
+    display: flex;
+    gap: 50px;
+
+   }
+   .h1-1{
+    font-size: 36px;
+    margin-bottom: 50px;
+   }
+   .all-btn{
+    padding-top: 50px;
    }

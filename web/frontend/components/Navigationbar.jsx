@@ -24,20 +24,17 @@ export function Navigationbar() {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-envelope"></i><span>Emails</span>
+          <NavLink to="/productpage" className="ancer-class">
+            <i className="fa-solid fa-envelope"></i><span>Products</span>
           </NavLink>
         </li>
         <li>
+          
           <NavLink to="/pagename" className="ancer-class">
             <i className="fa-solid fa-chart-column"></i><span>Charts</span>
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-gem"></i><span>Premium</span>
-          </NavLink>
-        </li>
+      
         <li>
           <NavLink to="/pagename" className="ancer-class">
             <i className="fa-solid fa-right-from-bracket"></i><span>Logout</span>

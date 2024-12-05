@@ -18,6 +18,7 @@ export function OrderGraph() {
   return (
     <div>
     <Layout >
+
         <Layout.Section oneFull>
           <LegacyCard title=" online store" sectioned>
           <Line data={data} />
@@ -26,6 +27,12 @@ export function OrderGraph() {
         <Layout.Section oneThird>
           <LegacyCard title="Online store dashboard" sectioned>
            <Doughnut data={data} />
+          </LegacyCard>
+        </Layout.Section>
+        <Layout.Section oneThird>
+          <LegacyCard title="Online store dashboard" sectioned>
+          <Bar data={data} />
+
           </LegacyCard>
         </Layout.Section>
         <Layout.Section oneThird>

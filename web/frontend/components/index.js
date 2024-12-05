@@ -5,4 +5,7 @@ export { OrderGraph } from "./OrderGraph";
 export { Indecxtable } from "./indecxtable";
 export { AmazonProduct } from "./AmazonProduct";
 export { Inventorybtn } from "./inventorymapping";
+export { ProductOrderTable } from "./ProductOrderTable";
+export { DailySyncLogTable } from "./DailySyncLogTable";
+export { SyncGraph } from "./DailySyncGraph";
 export * from "./providers";

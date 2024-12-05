@@ -20,7 +20,7 @@ export function Navigationbar() {
       <ul className="menu">
         <li>
           <NavLink to="/" className="ancer-class">
-            <i className="fa-solid fa-house"></i><span>Home</span>
+            <i className="fa-solid fa-house"></i><span>Dashboard</span>
           </NavLink>
         </li>
         <li>
@@ -30,14 +30,14 @@ export function Navigationbar() {
         </li>
         <li>
           
-          <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-chart-column"></i><span>Charts</span>
+          <NavLink to="/settings" className="ancer-class">
+            <i className="fa-solid fa-chart-column"></i><span>Settings</span>
           </NavLink>
         </li>
       
         <li>
           <NavLink to="/pagename" className="ancer-class">
-            <i className="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+            <i className="fa-solid fa-right-from-bracket"></i><span>Reports</span>
           </NavLink>
         </li>
       </ul>

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Page, Layout, Card, DataTable, Button } from "@shopify/polaris";
 import { useTranslation } from "react-i18next";
-export function Indecxtable() {
+import { SyncGraph } from "./DailySyncGraph";
+export function DailySyncLogTable() {
   const [products, setProducts] = useState([]); 
   const [loading, setLoading] = useState(true);  
 
@@ -35,13 +36,13 @@ export function Indecxtable() {
     const imageUrl = product.images.length > 0 ? product.images[0].src : ""; // Get first image
 
     return [
-      <img src={imageUrl} alt={product.title} style={{ width: "50px", height: "50px" }} />,
-      product.title,
-      sku,  
-      <div dangerouslySetInnerHTML={{ __html: product.body_html }} />,
-      `$${price}`,  // Price
-      inventory,    // Inventory
-      <Button onClick={() => handleEditProduct(product)}>Edit</Button>  // Edit Button
+     
+      
+      inventory,   
+      <h4 onClick={() => handleEditProduct(product)}>0</h4> ,
+      <h4 >0</h4> ,
+     
+      
     ];
   });
 
@@ -51,9 +52,13 @@ export function Indecxtable() {
   };
 
   return (
-      <Layout>
+      <Layout className="d-flexx">
         <Layout.Section fullWidth>
-        <h4 className="h1-1">Inventory Tracking Table</h4>
+            <div className="d-flex-sb">
+
+        <h4 className="h1-1">Daily Sync Log Table</h4>
+            <button className="sync-btn">Sync</button>
+            </div>
 
           <Card>
             <Card.Section>
@@ -61,13 +66,17 @@ export function Indecxtable() {
                 <p>Loading products...</p>
               ) : (
                 <DataTable
-                  columnContentTypes={['text', 'text', 'text', 'text', 'text', 'text']}
-                  headings={['Image', 'Title', 'SKU', 'Description', 'Price', 'Inventory', 'Actions']}
+                  columnContentTypes={['text', 'text', 'text', 'text' ]}
+                  headings={[ 'Inventory', 'Orders', 'Fullfill']}
                   rows={rows}
                 />
+                
               )}
             </Card.Section>
           </Card>
+        </Layout.Section>
+        <Layout.Section>
+        <div className="syncgraph"><SyncGraph /></div>
         </Layout.Section>
       </Layout>
   );

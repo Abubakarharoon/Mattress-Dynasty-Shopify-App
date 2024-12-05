@@ -1,5 +1,6 @@
-import { Layout, ButtonGroup,Card, Button} from '@shopify/polaris';
 import React from 'react';
+import { Layout, Card, Button} from '@shopify/polaris';
+import { NavLink } from 'react-router-dom';
 
 export function Inventorybtn() {
   return (
@@ -8,10 +9,12 @@ export function Inventorybtn() {
       
     <Card>
           <Card.Section>
-          <ButtonGroup>
-      <Button>ADD A product</Button>
-      <Button variant="primary">MAPPING PRODUCT</Button>
-    </ButtonGroup>
+        <div className='ancer-class-main'>
+          <NavLink to="/pagename" className="ancer-class">
+              <Button variant="primary">MAPPING PRODUCT</Button>
+          </NavLink>
+          </div>
+  
           </Card.Section>
         </Card>
         </Layout.Section>

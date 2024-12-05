@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://stays-degrees-triumph-published.trycloudflare.com"
+application_url = "https://scholarship-subdivision-ka-costumes.trycloudflare.com"
 embedded = true
 name = "lean-policy-app"
 handle = "lean-policy-app-3"
@@ -20,9 +20,9 @@ scopes = "read_orders,read_products,write_products,read_inventory,write_inventor
 
 [auth]
 redirect_urls = [
-  "https://stays-degrees-triumph-published.trycloudflare.com/auth/callback",
-  "https://stays-degrees-triumph-published.trycloudflare.com/auth/shopify/callback",
-  "https://stays-degrees-triumph-published.trycloudflare.com/api/auth/callback"
+  "https://scholarship-subdivision-ka-costumes.trycloudflare.com/auth/callback",
+  "https://scholarship-subdivision-ka-costumes.trycloudflare.com/auth/shopify/callback",
+  "https://scholarship-subdivision-ka-costumes.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

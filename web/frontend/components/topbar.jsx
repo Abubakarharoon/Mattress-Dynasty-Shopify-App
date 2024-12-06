@@ -1,42 +1,60 @@
-import React, { useEffect, useState } from 'react';
-// import { useAuthenticatedFetch } from '../hooks/auth';
+import React, { useEffect, useState } from "react";
+import { Icon, Badge, Tooltip, Text } from "@shopify/polaris";
+import { NotificationIcon } from '@shopify/polaris-icons';  // Importing the notification icon
 
 export function Topbar() {
-  // const fetch = useAuthenticatedFetch();
-  // const [productsCount, setProductsCount] = useState(null); // State for product count
-  // const [loading, setLoading] = useState(true); // State for loading status
-  // const [error, setError] = useState(null); // State for errors
-
-  // useEffect(() => {
-  //   const fetchStoreInfo = async () => {
-  //     try {
-  //       const response = await fetch('/api/products/count', { method: 'GET' });
-  //       if (!response.ok) {
-  //         throw new Error('Failed to fetch product count');
-  //       }
-  //       const data = await response.json();
-  //       setProductsCount(data.count); // Set the count
-  //       setError(null); // Clear any previous errors
-  //     } catch (err) {
-  //       setError(err.message); // Set the error message
-  //     } finally {
-  //       setLoading(false); // End loading
-  //     }
-  //   };
-
-  //   fetchStoreInfo();
-  // }, [fetch]);
+  const [lowInventoryCount, setLowInventoryCount] = useState(0);
+  const [lowInventoryProducts, setLowInventoryProducts] = useState([]);
+  
+  // Fetch the low inventory products
+  useEffect(() => {
+    fetch("/api/products/low-inventory")
+      .then(response => response.json())
+      .then(data => {
+        setLowInventoryProducts(data);
+        setLowInventoryCount(data.length); // Set the count of products with low inventory
+      })
+      .catch(error => {
+        console.error("Error fetching low inventory products:", error);
+      });
+  }, []); // Runs once when component mounts
 
   return (
-    <div>
-      <div className="top-baar">
-        <div className="logo"></div>
-        <div className="linkbar"></div>
-        <div className="product-num">
+    <div style={{ display: "flex", alignItems: "center", justifyContent:"flex-end" }}>
+      <Tooltip content="Low Inventory">
+        <div style={{ position: "relative" }}>
+          <Icon
+            source={NotificationIcon}
+            tone="critical"
+            style={{ cursor: "pointer", fontSize: "24px" }}
+          />
           
-   
+          {/* Show badge only if there are low inventory products */}
+          {lowInventoryCount > 0 && (
+            <Badge
+              status="attention"
+              style={{
+                position: "absolute",
+                top: "-5px",
+                right: "-5px",
+                fontSize: "12px",
+                zIndex: 10,
+              }}
+            >
+              {lowInventoryCount}
+            </Badge>
+          )}
         </div>
-      </div>
+      </Tooltip>
+      
+      {/* Optionally, display a notification message */}
+      {lowInventoryCount > 0 && (
+        <div style={{ marginLeft: "10px", fontSize: "14px", color: "red" }}>
+          <Text>
+            <strong>{lowInventoryCount}</strong> product(s) have low inventory!
+          </Text>
+        </div>
+      )}
     </div>
   );
 }

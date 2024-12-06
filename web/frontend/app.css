@@ -6,7 +6,7 @@
 .sidebar {
     width: 200px;
     height: 600px;
-    background-color: #95bf47;
+    background-color: #1C325B;
     color: white;
     transition: width 0.3s;
     overflow: hidden;
@@ -29,11 +29,14 @@
 .sidebar ul.menu {
     list-style: none;
     padding-top: 20px;
+    padding-left: 0;
+    
 }
 
 .sidebar ul.menu li {
     padding: 0;
     text-align: left;
+    
 }
 
 .sidebar ul.menu li .ancer-class {
@@ -50,7 +53,10 @@
 
 .sidebar ul.menu li .ancer-class:hover ,
 .sidebar ul.menu li .ancer-class.active {
-    background-color: #64943e;
+    background-color: #354c76;
+}
+.sidebar ul.menu li .ancer-class svg path{
+fill: white;
 }
 
 .menu i {
@@ -65,10 +71,14 @@
 
 /* Collapsed Sidebar */
 .sidebar.collapsed {
-    width: 60px;
+    width: 80px;
 }
-
-.sidebar.collapsed .menu li  span {
+.content-section{
+    flex-grow: 1;
+    max-width: 65%;
+    width: 100%;
+}
+.sidebar.collapsed .menu li  .sidebar-icon-text {
     display: none;
 }
 .content {
@@ -136,7 +146,7 @@
 
 
 .settings-submit-button{
-    background-color: #95BF47 !important;
+    background-color: #1C325B !important;
 }
 
 .settings-seller-heading{
@@ -144,7 +154,7 @@
     margin-bottom: 1rem;
     font-weight: 400;
     font-size:16px;
-    background-color: #95BF47;
+    background-color: #1C325B;
     border-radius: 8px;
     padding: 10px;
 
@@ -158,7 +168,7 @@
     margin-bottom: 1rem;
     font-weight: 400;
     font-size:16px;
-    background-color: #95BF47;
+    background-color: #1C325B;
     border-radius: 8px;
     padding: 10px;
 }
@@ -262,3 +272,45 @@
     font-size: 16px;
     font-weight: 500;
 }
+
+
+
+.sidebar-icons-spain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+
+.sidebar-icon-text{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,10 +14,14 @@ import {
   ChartHistogramFirstIcon
 } from '@shopify/polaris-icons';
 
-
+import {
+  RefreshIcon
+} from '@shopify/polaris-icons';
 import {
   ProductFilledIcon
 } from '@shopify/polaris-icons';
+
+import Sitelogo from '/assets/logo.png';
 
 
 export function Navigationbar() {
@@ -35,6 +39,16 @@ export function Navigationbar() {
       <button className="toggle-btn" onClick={toggleSidebar}>
         {isCollapsed ? '⮞' : '⮜'} {/* Change arrow direction based on the state */}
       </button>
+      <div className="sidebar-logo">
+        <div className="sidebar-logo-inner">
+         <div className="logo">
+           <img src={ Sitelogo } alt="" />
+           </div>
+           <div className="prod-map">
+            <h4>Product Mapping</h4>
+           </div>
+        </div>
+      </div>
       <ul className="menu">
         <li>
           <NavLink to="/" className="ancer-class" title='Dashboard'>
@@ -51,27 +65,30 @@ export function Navigationbar() {
 /><h2 className='sidebar-icon-text' >Products</h2></span>
           </NavLink>
         </li>
+     
+      
+        <li>
+          <NavLink to="/reports" className="ancer-class" title='Reports'>
+                          <i className="fa-solid fa-right-from-bracket"></i><span className='sidebar-icons-spain'>
+                            <Icon
+                                source={RefreshIcon}
+                                tone="base"
+                                style={{
+                                  color: "red", // Change to any color
+                                  fontSize: "24px",
+                                }}
+                              />
+              <h2 className='sidebar-icon-text'>Sync Log</h2></span>
+          </NavLink>
+        </li>
         <li>
           
           <NavLink to="/settings" className="ancer-class" title='Settings'>
             <i className="fa-solid fa-chart-column"></i><span className='sidebar-icons-spain'><Icon
-  source={SettingsIcon}
-  tone="base"
+              source={SettingsIcon}
+              tone="base"
 
-/><h2 className='sidebar-icon-text'>Settings</h2></span>
-          </NavLink>
-        </li>
-      
-        <li>
-          <NavLink to="/reports" className="ancer-class" title='Reports'>
-            <i className="fa-solid fa-right-from-bracket"></i><span className='sidebar-icons-spain'><Icon
-  source={ChartHistogramFirstIcon}
-  tone="base"
-  style={{
-    color: "red", // Change to any color
-    fontSize: "24px",
-  }}
-/><h2 className='sidebar-icon-text'>Reports</h2></span>
+            /><h2 className='sidebar-icon-text'>Settings</h2></span>
           </NavLink>
         </li>
       </ul>

@@ -1,20 +1,36 @@
+
+/* Define color variables */
+:root {
+    --primary-color: #004134;
+    --primary-color-light: #085749;
+
+  }
+
 .main-section{
     display: flex;
     gap:30px ;
     width: 100%;
 }
 .sidebar {
-    width: 200px;
-    height: 600px;
-    background-color: #1C325B;
+    width: 230px;
+    height: 100vh;
+    background-color: var(--primary-color);
     color: white;
     transition: width 0.3s;
     overflow: hidden;
     border-radius: 10px;
-    padding: 10px 0;
-    
-}
+   
+    position: sticky;
+top: 0;
 
+}
+.sidebar-logo{
+    background-color: var(--primary-color-light);
+}
+.Polaris-Icon{
+    height: 100% !important;
+    width: 25px !important;
+}
 .sidebar .toggle-btn {
     background-color: transparent;
     color: white;
@@ -24,11 +40,14 @@
     left: 10px;
     padding: 10px;
     cursor: pointer;
+    position: absolute;
+    right: 0;
+    left: auto;
 }
 
 .sidebar ul.menu {
     list-style: none;
-    padding-top: 20px;
+    margin-top: 0;
     padding-left: 0;
     
 }
@@ -43,17 +62,32 @@
     text-decoration: none;
     color: white;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
+ 
+    padding: 10px;
     transition: background-color 0.3s;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 1px solid #224D44;
+
 }
+.sidebar ul.menu li{
+    position: relative;
+}
+.sidebar ul.menu li .ancer-class.active::before, .sidebar ul.menu li .ancer-class:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #EDF6F4;
+}
+
 
 .sidebar ul.menu li .ancer-class:hover ,
 .sidebar ul.menu li .ancer-class.active {
-    background-color: #354c76;
+    /* background-color: var(--primary-color-light); */
+    /* border-left: 3px solid white; */
 }
 .sidebar ul.menu li .ancer-class svg path{
 fill: white;
@@ -64,9 +98,8 @@ fill: white;
     position: relative;
     left: 5px;
 }
-
-.menu span {
-    margin-left: 5px;
+.sidebar-logo-inner{
+    padding: 30px 30px;
 }
 
 /* Collapsed Sidebar */
@@ -77,6 +110,12 @@ fill: white;
     flex-grow: 1;
     max-width: 65%;
     width: 100%;
+}
+.sidebar.collapsed .sidebar-logo-inner{
+    padding: 30px 0;
+}
+.sidebar.collapsed .prod-map{
+    display: none;
 }
 .sidebar.collapsed .menu li  .sidebar-icon-text {
     display: none;
@@ -146,7 +185,7 @@ fill: white;
 
 
 .settings-submit-button{
-    background-color: #1C325B !important;
+    background-color: var(--primary-color) !important;
 }
 
 .settings-seller-heading{
@@ -154,7 +193,7 @@ fill: white;
     margin-bottom: 1rem;
     font-weight: 400;
     font-size:16px;
-    background-color: #1C325B;
+    background-color: var(--primary-color);
     border-radius: 8px;
     padding: 10px;
 
@@ -168,7 +207,7 @@ fill: white;
     margin-bottom: 1rem;
     font-weight: 400;
     font-size:16px;
-    background-color: #1C325B;
+    background-color: var(--primary-color);
     border-radius: 8px;
     padding: 10px;
 }
@@ -230,7 +269,7 @@ fill: white;
 .flipswitch-inner:before {
   content: "ON";
   padding-left: 12px;
-  background-color: #1C325B;
+  background-color: var(--primary-color);
   color: #FFFFFF;
 }
 
@@ -238,7 +277,7 @@ fill: white;
   content: "OFF";
   padding-right: 12px;
   background-color: #FFFFFF;
-  color: #1C325B;
+  color: var(--primary-color);
   text-align: right;
 }
 

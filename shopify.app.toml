@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://november-deaf-upcoming-engineers.trycloudflare.com"
+application_url = "https://humanity-sail-compatible-gasoline.trycloudflare.com"
 embedded = true
 name = "lean-policy-app"
 handle = "lean-policy-app-3"
@@ -15,9 +15,9 @@ scopes = "write_products,read_products,read_orders,write_inventory,read_inventor
 
 [auth]
 redirect_urls = [
-  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/callback",
-  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/shopify/callback",
-  "https://november-deaf-upcoming-engineers.trycloudflare.com/api/auth/callback"
+  "https://humanity-sail-compatible-gasoline.trycloudflare.com/auth/callback",
+  "https://humanity-sail-compatible-gasoline.trycloudflare.com/auth/shopify/callback",
+  "https://humanity-sail-compatible-gasoline.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

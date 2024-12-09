@@ -1,0 +1,24 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "034293756b5b74f6ebc869c310e4de1d"
+application_url = "https://quantities-members-references-series.trycloudflare.com"
+embedded = true
+name = "Mattress Dynasity"
+handle = "mattress-dynasity"
+
+[webhooks]
+api_version = "2024-10"
+
+[auth]
+redirect_urls = [
+  "https://quantities-members-references-series.trycloudflare.com/auth/callback",
+  "https://quantities-members-references-series.trycloudflare.com/auth/shopify/callback",
+  "https://quantities-members-references-series.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "https-dynastymattress-com.myshopify.com"
+automatically_update_urls_on_dev = true

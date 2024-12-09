@@ -172,6 +172,9 @@ fill: white;
     border-radius: 8px;
     padding: 10px;
 }
+.amazon-sync-card{
+    max-width: 50%;
+}
 .sync-btn{
     text-align: center;
     font-weight: 400;
@@ -227,7 +230,7 @@ fill: white;
 .flipswitch-inner:before {
   content: "ON";
   padding-left: 12px;
-  background-color: #437A99;
+  background-color: #1C325B;
   color: #FFFFFF;
 }
 
@@ -235,7 +238,7 @@ fill: white;
   content: "OFF";
   padding-right: 12px;
   background-color: #FFFFFF;
-  color: #437A99;
+  color: #1C325B;
   text-align: right;
 }
 

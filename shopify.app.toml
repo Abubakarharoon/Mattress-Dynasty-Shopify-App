@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://zealand-fancy-similar-xl.trycloudflare.com"
+application_url = "https://november-deaf-upcoming-engineers.trycloudflare.com"
 embedded = true
 name = "lean-policy-app"
 handle = "lean-policy-app-3"
@@ -15,9 +15,9 @@ scopes = "write_products,read_products,read_orders,write_inventory,read_inventor
 
 [auth]
 redirect_urls = [
-  "https://zealand-fancy-similar-xl.trycloudflare.com/auth/callback",
-  "https://zealand-fancy-similar-xl.trycloudflare.com/auth/shopify/callback",
-  "https://zealand-fancy-similar-xl.trycloudflare.com/api/auth/callback"
+  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/callback",
+  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/shopify/callback",
+  "https://november-deaf-upcoming-engineers.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

@@ -8,7 +8,8 @@ import {
   HomeIcon
 } from '@shopify/polaris-icons';
 import {
-  ChevronRightIcon
+  ChevronRightIcon,
+  ChevronLeftIcon
 } from '@shopify/polaris-icons';
 import {
   ChartHistogramFirstIcon
@@ -22,6 +23,7 @@ import {
 } from '@shopify/polaris-icons';
 
 import Sitelogo from '/assets/logo.png';
+import Collapsedlogo from '/assets/collapsed-logo.png';
 
 
 export function Navigationbar() {
@@ -37,11 +39,22 @@ export function Navigationbar() {
     <div className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       {/* Toggle button to collapse/expand the sidebar */}
       <button className="toggle-btn" onClick={toggleSidebar}>
-        {isCollapsed ? '⮞' : '⮜'} {/* Change arrow direction based on the state */}
+                  {isCollapsed ? <div className="right-icon sidebar-icon">
+
+                  <Icon
+                    source={ChevronRightIcon}
+                    tone="base"
+                  /> </div> : <div className="left-icon sidebar-icon"> <Icon
+                    source={ChevronLeftIcon}
+                    tone="base"
+                  /> </div> } 
       </button>
       <div className="sidebar-logo">
         <div className="sidebar-logo-inner">
-         <div className="logo">
+          <div className="logo-collapsed">
+            <img src={ Collapsedlogo } alt="app logo" />
+                      </div>
+         <div className="app-logo">
            <img src={ Sitelogo } alt="" />
            </div>
            <div className="prod-map">

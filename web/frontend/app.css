@@ -17,7 +17,7 @@
     background-color: var(--primary-color);
     color: white;
     transition: width 0.3s;
-    overflow: hidden;
+  
     border-radius: 10px;
    
     position: sticky;
@@ -32,17 +32,21 @@ top: 0;
     width: 25px !important;
 }
 .sidebar .toggle-btn {
-    background-color: transparent;
-    color: white;
+    background-color: #EDF6F4;
     border: none;
     font-size: 20px;
-    position: relative;
-    left: 10px;
-    padding: 10px;
+
+    padding: 3px;
     cursor: pointer;
     position: absolute;
-    right: 0;
+    right: -13px;
     left: auto;
+    top: 15px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+ 
+    box-shadow: 0 4px 8px 0 #2C2C2C54, 0 6px 20px 0 #2C2C2C54;
 }
 
 .sidebar ul.menu {
@@ -101,10 +105,15 @@ fill: white;
 .sidebar-logo-inner{
     padding: 30px 30px;
 }
-
+.logo-collapsed{
+    display: none;
+}
+.sidebar.collapsed .logo-collapsed{
+    display: block;
+}
 /* Collapsed Sidebar */
 .sidebar.collapsed {
-    width: 80px;
+    width: 45px;
 }
 .content-section{
     flex-grow: 1;
@@ -113,8 +122,11 @@ fill: white;
 }
 .sidebar.collapsed .sidebar-logo-inner{
     padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.sidebar.collapsed .prod-map{
+.sidebar.collapsed .prod-map, .sidebar.collapsed .app-logo{
     display: none;
 }
 .sidebar.collapsed .menu li  .sidebar-icon-text {

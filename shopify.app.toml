@@ -1,29 +1,29 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://indicating-arguments-ton-exercise.trycloudflare.com"
+application_url = "https://november-deaf-upcoming-engineers.trycloudflare.com"
 embedded = true
-name = "lean-policy-app"
-handle = "lean-policy-app-3"
+name = "Mattress Dynasity"
+handle = "mattress-dynasity"
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "https-dynastymattress-com.myshopify.com"
+include_config_on_deploy = true
 
 [webhooks]
 api_version = "2024-10"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products,read_products,read_orders,write_inventory,read_inventory"
+scopes = "read_inventory,read_orders,read_products,write_inventory,write_products"
 
 [auth]
 redirect_urls = [
-  "https://indicating-arguments-ton-exercise.trycloudflare.com/auth/callback",
-  "https://indicating-arguments-ton-exercise.trycloudflare.com/auth/shopify/callback",
-  "https://indicating-arguments-ton-exercise.trycloudflare.com/api/auth/callback"
+  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/callback",
+  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/shopify/callback",
+  "https://november-deaf-upcoming-engineers.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
 embedded = false
-
-[build]
-dev_store_url = "fruitfullsupply.myshopify.com"
-automatically_update_urls_on_dev = true
-include_config_on_deploy = true

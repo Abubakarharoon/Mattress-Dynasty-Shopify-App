@@ -7,9 +7,11 @@ import fetch from "node-fetch"; // Import node-fetch to make HTTP requests
 import shopify from "./shopify.js";
 import productCreator from "./product-creator.js";
 import PrivacyWebhookHandlers from "./privacy.js";
-import dotenv from 'dotenv';
-import mws from 'amazon-mws';
-dotenv.config();
+import axios from 'axios'; 
+// import dotenv from 'dotenv';
+// import mws from 'amazon-mws';
+// require('dotenv').config();
+// const mws = require('amazon-mws')();
 
 console.log(process.env.SHOPIFY_API_KEY);
 const PORT = parseInt(
@@ -132,7 +134,40 @@ app.get("/api/products/low-inventory", async (_req, res) => {
 });
 
 
+// ///////// PRODUCT AMAZON FETCH 
 
+const ZYLA_API_URL = 'https://zylalabs.com/api/4233/amazon+product+extractor+api/5155/product+information';
+const API_ACCESS_KEY = '5892|xmNJ3slV06Zfh4pWGXzzFveNstX51nirwZ91tsiG'; // Your ZYLA API access key
+app.get('/api/amazon-products', async (req, res) => {
+  try {
+    const asin = req.query.asin;  // Getting the ASIN from the query parameter
+
+    // Check if ASIN is provided
+    if (!asin) {
+      return res.status(400).json({ error: 'ASIN is required' });
+    }
+
+    // Make the request to ZYLA API to fetch product details
+    const response = await axios.get(ZYLA_API_URL, {
+      params: {
+        asin: asin,  // The ASIN of the Amazon product
+      },
+      headers: {
+        'Authorization': `Bearer ${API_ACCESS_KEY}`,  // Pass the API access key in the Authorization header
+      },
+    });
+
+    // Check if the response contains product data
+    if (response.data) {
+      res.status(200).json(response.data); // Send the fetched product data to the frontend
+    } else {
+      res.status(404).json({ error: 'Product not found' });
+    }
+  } catch (error) {
+    console.error('Error fetching product from Amazon:', error);
+    res.status(500).json({ error: 'Failed to fetch product from Amazon' });
+  }
+});
 
 // Fetch the count of products
 app.get("/api/products/count", async (_req, res) => {

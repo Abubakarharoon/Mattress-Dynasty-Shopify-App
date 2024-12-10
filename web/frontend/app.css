@@ -6,12 +6,13 @@
 .sidebar {
     width: 200px;
     height: 600px;
-    background-color: #95bf47;
+    background-color: #1C325B;
     color: white;
     transition: width 0.3s;
     overflow: hidden;
     border-radius: 10px;
     padding: 10px 0;
+    
 }
 
 .sidebar .toggle-btn {
@@ -27,11 +28,14 @@
 .sidebar ul.menu {
     list-style: none;
     padding-top: 20px;
+    padding-left: 0;
+    
 }
 
 .sidebar ul.menu li {
     padding: 0;
     text-align: left;
+    
 }
 
 .sidebar ul.menu li .ancer-class {
@@ -48,7 +52,10 @@
 
 .sidebar ul.menu li .ancer-class:hover ,
 .sidebar ul.menu li .ancer-class.active {
-    background-color: #64943e;
+    background-color: #354c76;
+}
+.sidebar ul.menu li .ancer-class svg path{
+fill: white;
 }
 
 .menu i {
@@ -63,10 +70,14 @@
 
 /* Collapsed Sidebar */
 .sidebar.collapsed {
-    width: 60px;
+    width: 80px;
 }
-
-.sidebar.collapsed .menu li  span {
+.content-section{
+    flex-grow: 1;
+    max-width: 65%;
+    width: 100%;
+}
+.sidebar.collapsed .menu li  .sidebar-icon-text {
     display: none;
 }
 .content {
@@ -87,9 +98,221 @@
 
    }
    .h1-1{
-    font-size: 36px;
-    margin-bottom: 50px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
    }
    .all-btn{
     padding-top: 50px;
    }
+  
+
+
+   .Daily-sinc-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+   }
+
+   /* specify categories */
+.specify-categories{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;    
+}
+.specify-categories-1{
+    margin-left: 1rem;
+    padding: 10px 18px;
+    border-radius: 10px;
+
+}
+#specify-1{
+    background-color:#02B2AF ;
+    color: white;
+}
+#specify-2{
+    background-color:#2E96FF ;
+    color: white;
+}
+#specify-3{
+    background-color:#B800D8 ;
+    color: white;
+}
+
+
+.settings-submit-button{
+    background-color: #1C325B !important;
+}
+
+.settings-seller-heading{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size:16px;
+    background-color: #1C325B;
+    border-radius: 8px;
+    padding: 10px;
+
+
+}
+.text-white{
+    color: white;
+}
+.card-heading{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-size:16px;
+    background-color: #1C325B;
+    border-radius: 8px;
+    padding: 10px;
+}
+.amazon-sync-card{
+    max-width: 50%;
+}
+.sync-btn{
+    text-align: center;
+    font-weight: 400;
+    font-size:14px;
+    background-color: #95BF47;padding: 8px 15px;
+    border: none;
+    outline: none;
+    color: white;
+}
+.d-flex-sb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.flipswitch {
+  position: relative;
+  width: 80px;
+}
+
+.flipswitch input[type=checkbox] {
+  display: none;
+}
+
+.flipswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #999999;
+  border-radius: 50px;
+}
+
+.flipswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.flipswitch-inner:before, .flipswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 25px;
+  padding: 0;
+  line-height: 25px;
+  font-size: 16px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.flipswitch-inner:before {
+  content: "ON";
+  padding-left: 12px;
+  background-color: #1C325B;
+  color: #FFFFFF;
+}
+
+.flipswitch-inner:after {
+  content: "OFF";
+  padding-right: 12px;
+  background-color: #FFFFFF;
+  color: #1C325B;
+  text-align: right;
+}
+
+.flipswitch-switch {
+  width: 30px;
+  margin: -2.5px;
+  background: #FFFFFF;
+  border: 1px solid #999999;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 67px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
+  margin-left: 0;
+}
+
+.flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
+  right: 0;
+}
+.sync-flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid grey;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
+}
+.sync-title{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+.sidebar-icons-spain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+
+.sidebar-icon-text{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

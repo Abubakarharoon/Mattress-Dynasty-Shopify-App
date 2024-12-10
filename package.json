@@ -12,10 +12,20 @@
     "deploy": "shopify app deploy"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.10",
+    "@mui/x-charts": "^7.23.0",
+    "@shopify/polaris-icons": "^9.3.0",
     "@shopify/shopify-api": "^11.6.0",
+    "amazon-mws": "^0.0.30",
     "antd": "^5.22.2",
+    "axios": "^1.7.9",
     "chart.js": "^4.4.6",
-    "react-chartjs-2": "^5.2.0"
+    "dotenv": "^16.4.7",
+    "install": "^0.13.0",
+    "react-chartjs-2": "^5.2.0",
+    "xml2js": "^0.6.2"
   },
   "author": "DELL",
   "private": true,

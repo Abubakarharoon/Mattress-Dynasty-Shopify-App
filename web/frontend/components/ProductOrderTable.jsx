@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import { Layout, Card, DataTable, Button, Pagination, TextField } from "@shopify/polaris";
+import { Page, Layout, Card, DataTable, Button, Pagination, TextField } from "@shopify/polaris";
 
-export function Indecxtable() {
-  const [products, setProducts] = useState([]); 
-  const [loading, setLoading] = useState(true);  
+export function ProductOrderTable() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1); // Track the current page
-  const [queryValue, setQueryValue] = useState(""); // State for the search query
+  const [queryValue, setQueryValue] = useState(""); // State for search query
   const rowsPerPage = 4; // Number of rows per page
 
   useEffect(() => {
     fetch("/api/products/all", {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json" }
     })
       .then((response) => {
         if (!response.ok) {
@@ -35,13 +35,13 @@ export function Indecxtable() {
     setCurrentPage(1); // Reset to first page on new search
   };
 
-  // Filter the products based on the search query
+  // Filter products based on the search query
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(queryValue.toLowerCase())
   );
 
   // Prepare data for the DataTable (filtered products)
-  const rows = filteredProducts.map((product) => {
+  const rows = filteredProducts.map(product => {
     const variant = product.variants[0]; // Assuming we're showing the first variant's details
     const sku = variant.sku;
     const price = variant.price;
@@ -49,17 +49,12 @@ export function Indecxtable() {
     const imageUrl = product.images.length > 0 ? product.images[0].src : ""; // Get first image
 
     return [
-      <img
-        src={imageUrl}
-        alt={product.title}
-        style={{ width: "50px", height: "50px" }}
-      />,
+      <img src={imageUrl} alt={product.title} style={{ width: "50px", height: "50px" }} />,
       product.title,
       sku,
-      <div dangerouslySetInnerHTML={{ __html: product.body_html }} />,
-      `$${price}`, // Price
-      inventory, // Inventory
-      <Button onClick={() => handleEditProduct(product)}>Edit</Button>, // Edit Button
+      inventory,
+      <h4 onClick={() => handleEditProduct(product)}>0</h4>,
+      <h4>0</h4>
     ];
   });
 
@@ -81,7 +76,7 @@ export function Indecxtable() {
   return (
     <Layout>
       <Layout.Section fullWidth>
-        <h4 className="h1-1">Inventory Tracking Table</h4>
+        <h4 className="h1-1">Product Orders Table</h4>
 
         <Card>
           <Card.Section>
@@ -100,16 +95,8 @@ export function Indecxtable() {
             ) : (
               <>
                 <DataTable
-                  columnContentTypes={[
-                    "text",
-                    "text",
-                    "text",
-                    "text",
-                    "text",
-                    "text",
-                    "text",
-                  ]}
-                  headings={["Image", "Title", "SKU", "Description", "Price", "Inventory", "Actions"]}
+                  columnContentTypes={["text", "text", "text", "text", "text", "text"]}
+                  headings={["Image", "Title", "SKU", "Inventory", "Orders", "Fullfill"]}
                   rows={currentPageRows}
                 />
 
@@ -130,4 +117,3 @@ export function Indecxtable() {
     </Layout>
   );
 }
-  

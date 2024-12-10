@@ -23,7 +23,7 @@ export default function App() {
           </NavMenu>
           <div className="main-section">
             <div className="menu-section">
-<Navigationbar />
+            <Navigationbar />
             </div>
             <div className="content-section">
             <Topbar />

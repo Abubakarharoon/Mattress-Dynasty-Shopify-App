@@ -7,7 +7,11 @@ import fetch from "node-fetch"; // Import node-fetch to make HTTP requests
 import shopify from "./shopify.js";
 import productCreator from "./product-creator.js";
 import PrivacyWebhookHandlers from "./privacy.js";
+import dotenv from 'dotenv';
+import mws from 'amazon-mws';
+dotenv.config();
 
+console.log(process.env.SHOPIFY_API_KEY);
 const PORT = parseInt(
   process.env.BACKEND_PORT || process.env.PORT || "3000",
   10
@@ -76,6 +80,59 @@ app.get("/api/products/all", async (_req, res) => {
     res.status(500).json({ error: 'Failed to fetch products from Shopify' });
   }
 });
+
+// Amazon product fetch
+
+
+// \\\\\\\product low inventory notification
+app.get("/api/products/low-inventory", async (_req, res) => {
+  try {
+    // Step 1: Validate the session is available and authenticated
+    if (!res.locals.shopify.session) {
+      return res.status(400).json({ error: "No valid Shopify session found." });
+    }
+
+    // Step 2: Fetch products from Shopify API (using REST API)
+    const accessToken = res.locals.shopify.session.accessToken;
+    const shop = res.locals.shopify.session.shop;
+    const apiVersion = "2024-10"; // Ensure this matches the Shopify API version you're using
+    
+    // Construct the Shopify REST API URL for fetching products
+    const url = `https://${shop}/admin/api/${apiVersion}/products.json`;
+
+    // Fetch the products from Shopify REST Admin API
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Shopify-Access-Token": accessToken,
+      },
+    });
+
+    // Check if the response was successful
+    if (!response.ok) {
+      throw new Error(`Failed to fetch products: ${response.statusText}`);
+    }
+
+    // Parse the JSON response
+    const data = await response.json();
+
+    // Step 3: Filter products for low inventory (less than 10)
+    const lowInventoryProducts = data.products.filter((product) => {
+      const variant = product.variants[0]; // Assuming we're checking the first variant for each product
+      return variant.inventory_quantity < 10; // Only keep products with inventory less than 10
+    });
+
+    // Step 4: Return only the low inventory products
+    res.status(200).json(lowInventoryProducts);
+  } catch (error) {
+    console.error("Error fetching low inventory products:", error);
+    res.status(500).json({ error: 'Failed to fetch low inventory products from Shopify' });
+  }
+});
+
+
+
 
 // Fetch the count of products
 app.get("/api/products/count", async (_req, res) => {

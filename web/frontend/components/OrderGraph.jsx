@@ -25,7 +25,7 @@ export function OrderGraph() {
           </LegacyCard>
         </Layout.Section>
         <Layout.Section oneThird>
-          <LegacyCard title="Online store dashboard" sectioned>
+          <LegacyCard title="Online store dashboardd" sectioned>
            <Doughnut data={data} />
           </LegacyCard>
         </Layout.Section>

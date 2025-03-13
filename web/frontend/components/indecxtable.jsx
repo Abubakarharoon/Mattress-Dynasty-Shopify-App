@@ -129,5 +129,4 @@ export function Indecxtable() {
       </Layout.Section>
     </Layout>
   );
-}
-  
+}  

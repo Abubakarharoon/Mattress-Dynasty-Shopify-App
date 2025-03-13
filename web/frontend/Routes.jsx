@@ -1,5 +1,5 @@
 import { Routes as ReactRouterRoutes, Route } from "react-router-dom";
-
+import { OrderEditModule } from "./components/OrderEditModule"; 
 /**
  * File-based routing.
  * @desc File-based routing that uses React Router under the hood.
@@ -25,6 +25,7 @@ export default function Routes({ pages }) {
   return (
     <ReactRouterRoutes>
       {routeComponents}
+       <Route path="order/edit/:orderId" element={<OrderEditModule />} />
       <Route path="*" element={<NotFound />} />
     </ReactRouterRoutes>
   );

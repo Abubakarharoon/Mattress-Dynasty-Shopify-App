@@ -3,6 +3,7 @@
 :root {
     --primary-color: #004134;
     --primary-color-light: #085749;
+    --fade-color-light: #878787;
 
   }
 
@@ -197,6 +198,18 @@ fill: white;
 
 .settings-submit-button{
     background-color: var(--primary-color) !important;
+    display: flex;
+width: 130px;
+height: 36px;
+padding: 0px 15px;
+justify-content: space-between;
+align-items: center;
+color: #FFF;
+font-family: Inter;
+font-size: 12px !important;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 
 .settings-seller-heading{
@@ -223,7 +236,9 @@ fill: white;
     padding: 10px;
 }
 .amazon-sync-card{
-    max-width: 50%;
+    
+    max-width: 481px;
+
 }
 .sync-btn{
     text-align: center;
@@ -316,14 +331,18 @@ fill: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 0.5px solid grey;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+    border-bottom: 1px solid #DDD;
+
+  padding: 20px 0;
 
 }
 .sync-title{
-    font-size: 16px;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
     font-weight: 500;
+    line-height: normal;
 }
 
 
@@ -342,6 +361,114 @@ fill: white;
 }
 
 
+/* setting abubakar css */
+.amazon-tab-section .css-19kzrtu, .account-tab-section .css-19kzrtu{
+    padding: 30px 0 0 0; 
+}
+.header-setting-sync{
+    display: flex;
+justify-content: space-between;
+align-items: center;
+display: flex;
+max-width: 999px;
+padding: 15px;
+align-items: center;
+gap: 15px;
+border-radius: 4px;
+background: #EDF6F4;
+margin-bottom: 30px;
+}
+.sync-btn-setting{
+    color: #FFF !important;
+font-family: Inter;
+font-size: 12px !important;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+display: flex;
+width: 130px !important;
+height: 36px;
+border-radius: 4px;
+border: 1px solid var(--primary-color);
+background: var(--primary-color) !important;
+padding: 0px 15px;
+justify-content: space-between;
+align-items: center;
+}
+.header-account-num-set{
+    color: #000;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+
+line-height: normal;
+}
+/* From Uiverse.io by mrhyddenn */ 
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+   }
+   
+   /* Hide default HTML checkbox */
+   .switch input {
+    opacity: 1;
+    width: 0;
+    height: 0;
+   }
+   
+   /* The slider */
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background: #D9D9D9;
+    transition: .4s;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    border-radius: 16px;
+    left: 0.5px;
+    top: 0;
+    bottom: 0;
+    background-color: #FFF;
+    /* box-shadow: 0 2px 5px #999999; */
+    transition: .4s;
+   }
+   
+   input:checked + .slider {
+    background-color: var(--primary-color);
+    border: 1px solid transparent;
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.7em);
+   }
+   .input-syn-amazon{
+    margin-bottom: 15px !important;
+   }
+   .label-typography{
+    color: #000;
+font-family: Inter;
+font-size: 14px !important;
+font-style: normal;
+font-weight: 500 !important;
+line-height: normal;
+   }
+/* setting abubakar css */
 
 
 

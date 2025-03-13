@@ -21,7 +21,9 @@ import {
 import {
   ProductFilledIcon
 } from '@shopify/polaris-icons';
-
+import {
+  OrderIcon
+} from '@shopify/polaris-icons';
 import Sitelogo from '/assets/logo.png';
 import Collapsedlogo from '/assets/collapsed-logo.png';
 
@@ -83,15 +85,21 @@ export function Navigationbar() {
         <li>
           <NavLink to="/reports" className="ancer-class" title='Reports'>
                           <i className="fa-solid fa-right-from-bracket"></i><span className='sidebar-icons-spain'>
-                            <Icon
-                                source={RefreshIcon}
-                                tone="base"
-                                style={{
-                                  color: "red", // Change to any color
-                                  fontSize: "24px",
-                                }}
-                              />
-              <h2 className='sidebar-icon-text'>Sync Log</h2></span>
+                          <Icon
+  source={OrderIcon}
+  tone="base"
+/>
+              <h2 className='sidebar-icon-text'>Order</h2></span>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/OrderTrackingpage" className="ancer-class" title='OrderTrackingpage'>
+                          <i className="fa-solid fa-right-from-bracket"></i><span className='sidebar-icons-spain'>
+                          <Icon
+  source={OrderIcon}
+  tone="base"
+/>
+              <h2 className='sidebar-icon-text'>Order Tracking</h2></span>
           </NavLink>
         </li>
         <li>
@@ -102,6 +110,16 @@ export function Navigationbar() {
               tone="base"
 
             /><h2 className='sidebar-icon-text'>Settings</h2></span>
+          </NavLink>
+        </li>
+        <li>
+          
+          <NavLink to="/LowInventorypage" className="ancer-class" title='LowInventorypage'>
+            <i className="fa-solid fa-chart-column"></i><span className='sidebar-icons-spain'><Icon
+              source={SettingsIcon}
+              tone="base"
+
+            /><h2 className='sidebar-icon-text'>LowInventoryProducts</h2></span>
           </NavLink>
         </li>
       </ul>

@@ -1,14 +1,14 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://november-deaf-upcoming-engineers.trycloudflare.com"
+application_url = "https://endorsement-robots-year-operator.trycloudflare.com"
 embedded = true
 name = "Mattress Dynasity"
-handle = "mattress-dynasity"
+handle = "lean-policy-app-3"
 
 [build]
 automatically_update_urls_on_dev = true
-dev_store_url = "https-dynastymattress-com.myshopify.com"
+dev_store_url = "https-quickstart-0cb4d6bf.myshopify.com"
 include_config_on_deploy = true
 
 [webhooks]
@@ -16,14 +16,14 @@ api_version = "2024-10"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_inventory,read_orders,read_products,write_inventory,write_products"
+scopes = "read_customers,read_inventory,read_orders,read_products,write_customers,write_inventory,write_orders,write_products"
 
 [auth]
 redirect_urls = [
-  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/callback",
-  "https://november-deaf-upcoming-engineers.trycloudflare.com/auth/shopify/callback",
-  "https://november-deaf-upcoming-engineers.trycloudflare.com/api/auth/callback"
+  "https://endorsement-robots-year-operator.trycloudflare.com/auth/callback",
+  "https://endorsement-robots-year-operator.trycloudflare.com/auth/shopify/callback",
+  "https://endorsement-robots-year-operator.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
-embedded = false
+embedded = true

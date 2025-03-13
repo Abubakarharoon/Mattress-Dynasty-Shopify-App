@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Box, TextField, Button, Tabs, Tab } from '@mui/material';
+import { Box, TextField, Button, Tabs,Typography, Tab } from '@mui/material';
 import { Card } from '@shopify/polaris';
 
 // CustomTabPanel to handle showing and hiding content based on the selected tab
@@ -91,15 +91,91 @@ export default function Settings() {
   return (
     <>
       <Box sx={{ width: '100%' }}>
+        <div className="header-setting-sync">
+          <div className="header-account-num-set">
+            Account ID: 123456789
+          </div>
+          <div className="header-account-btn-set">
+            <Button className="sync-btn-setting">
+              Sync Settings
+            </Button>
+          </div>
+        </div>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={value} onChange={handleTabChange} aria-label="basic tabs example">
-            <Tab label="Connet Seller Account" {...a11yProps(0)} />
-            <Tab label="Sync Settings" {...a11yProps(1)} />
+          <Tabs
+            value={value}
+            onChange={handleTabChange}
+            aria-label="custom color tabs example"
+            sx={{
+              '& .MuiTab-root': {
+                color: 'var(--fade-color-light)', // Default text color for unselected tabs
+                textTransform: 'none', // Optional: to disable uppercase transformation
+                fontSize: '16px',
+                padding: "10px",
+              },
+              '& .Mui-selected': {
+                color: 'var(--primary-color-light) !important', // Selected tab text color with !important to override defaults
+                fontWeight: '700', // Optional: make selected tab text bold
+                fontSize: '16px',
+
+              },
+              '& .MuiTabs-indicator': {
+                backgroundColor: 'var(--primary-color-light)', // Indicator color
+              },
+            }}
+          >
+            <Tab label="Sync Settings" {...a11yProps(0)} />
+            <Tab label="Account Details" {...a11yProps(1)} />
           </Tabs>
         </Box>
 
+        {/* Tab Panel for Amazon Sync */}
+        <CustomTabPanel value={value} index={0} className="amazon-tab-section">
+          <div className="amazon-sync-card">
+
+
+            <div className="sync-prod sync-flexbox">
+              <div className='sync-title'>
+                Sync Price
+              </div>
+              <div >
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div className="sync-prod sync-flexbox">
+              <div className='sync-title'>
+                Sync Inventory
+              </div>
+              <div >
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <div className="sync-prod sync-flexbox">
+              <div className='sync-title'>
+                Auto Sync
+              </div>
+              <div >
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+
+
+
+          </div>
+        </CustomTabPanel>
         {/* Tab Panel for Amazon Account */}
-        <CustomTabPanel value={value} index={0}>
+        <CustomTabPanel value={value} index={1} className="account-tab-section">
           <div className="amazon-acc-card">
             <Box
               component="form"
@@ -110,164 +186,121 @@ export default function Settings() {
                 height: '100vh',
                 flexDirection: 'column',
                 '& > :not(style)': {
-                  m: 5,
-                  width: '50%',
+                 
+                  width: '100%',
                 },
               }}
               noValidate
               autoComplete="off"
               onSubmit={handleSubmit}
             >
-              <Card>
-                <Card.Section>
-                  <h1 className="settings-seller-heading text-white">Connect Your Amazon Seller Account</h1>
-                  <Box sx={{ width: '100%' }} className="settings-text-box">
-                    <TextField
-                      label="AMAZON ACCESS KEY ID"
-                      variant="outlined"
-                      name="AMAZON_ACCESS_KEY_ID"
-                      value={amazonAccessKeyId}
-                      onChange={handleInputChange}
-                      fullWidth
-                      size="small"
-                      margin="dense"
-                      inputProps={{ style: { fontSize: 12 } }}
-                      InputLabelProps={{ style: { fontSize: 12 } }}
-                    />
-                    <TextField
-                      label="AMAZON SECRET ACCESS KEY"
-                      variant="outlined"
-                      name="AMAZON_SECRET_ACCESS_KEY"
-                      value={amazonSecretAccessKey}
-                      onChange={handleInputChange}
-                      fullWidth
-                      size="small"
-                      margin="dense"
-                      inputProps={{ style: { fontSize: 12 } }}
-                      InputLabelProps={{ style: { fontSize: 12 } }}
-                    />
-                    <TextField
-                      label="AMAZON SELLER ID"
-                      variant="outlined"
-                      name="AMAZON_SELLER_ID"
-                      value={amazonSellerId}
-                      onChange={handleInputChange}
-                      fullWidth
-                      size="small"
-                      margin="dense"
-                      inputProps={{ style: { fontSize: 12 } }}
-                      InputLabelProps={{ style: { fontSize: 12 } }}
-                    />
-                    <TextField
-                      label="AMAZON MARKETPLACE ID"
-                      variant="outlined"
-                      name="AMAZON_MARKETPLACE_ID"
-                      value={amazonMarketplaceId}
-                      onChange={handleInputChange}
-                      fullWidth
-                      size="small"
-                      margin="dense"
-                      inputProps={{ style: { fontSize: 12 } }}
-                      InputLabelProps={{ style: { fontSize: 12 } }}
-                    />
-                    <TextField
-                      label="MWS AUTH TOKEN"
-                      variant="outlined"
-                      name="MWS_AUTH_TOKEN"
-                      value={mwsAuthToken}
-                      onChange={handleInputChange}
-                      fullWidth
-                      size="small"
-                      margin="dense"
-                      inputProps={{ style: { fontSize: 12 } }}
-                      InputLabelProps={{ style: { fontSize: 12 } }}
-                    />
 
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      className="settings-submit-button"
-                      sx={{ mt: 2 }}
-                    >
-                      Save and Connect
-                    </Button>
-                  </Box>
-                </Card.Section>
-              </Card>
+
+<Box sx={{ width: '100%' }} className="settings-text-box">
+
+
+  <Typography  className="label-typography" sx={{ mb: 0.5 }}>
+    AMAZON ACCESS KEY ID
+  </Typography>
+  <TextField
+    label="AMAZON SELLER ID"
+    variant="outlined"
+    name="AMAZON_ACCESS_KEY_ID"
+    value={amazonAccessKeyId}
+    onChange={handleInputChange}
+    fullWidth
+    className="input-syn-amazon"
+    size="small"
+    margin="dense"
+    inputProps={{ style: { fontSize: 12 } }}
+    InputLabelProps={{ style: { fontSize: 12 } }}
+  />
+
+  <Typography className="label-typography"  sx={{ mb: 0.5 }}>
+    AMAZON SECRET ACCESS KEY
+  </Typography>
+  <TextField
+    label="AMAZON SECRET ACCESS KEY"
+    variant="outlined"
+    name="AMAZON_SECRET_ACCESS_KEY"
+    value={amazonSecretAccessKey}
+    onChange={handleInputChange}
+     className="input-syn-amazon"
+    fullWidth
+    size="small"
+    margin="dense"
+    inputProps={{ style: { fontSize: 12 } }}
+    InputLabelProps={{ style: { fontSize: 12 } }}
+  />
+
+  <Typography className="label-typography"  sx={{ mb: 0.5 }}>
+    AMAZON SELLER ID
+  </Typography>
+  <TextField
+  label="AMAZON SELLER ID"
+    variant="outlined"
+    name="AMAZON_SELLER_ID"
+    value={amazonSellerId}
+    onChange={handleInputChange}
+    
+    fullWidth
+    size="small"
+    margin="dense"
+    className="input-syn-amazon"
+    inputProps={{ style: { fontSize: 12 } }}
+    InputLabelProps={{ style: { fontSize: 12 } }}
+  />
+
+  <Typography className="label-typography"  sx={{ mb: 0.5 }}>
+    AMAZON MARKETPLACE ID
+  </Typography>
+  <TextField
+  label="AMAZON MARKETPLACE ID"
+    variant="outlined"
+    name="AMAZON_MARKETPLACE_ID"
+    value={amazonMarketplaceId}
+    onChange={handleInputChange}
+    fullWidth
+    size="small"
+    margin="dense"
+     className="input-syn-amazon"
+    inputProps={{ style: { fontSize: 12 } }}
+    InputLabelProps={{ style: { fontSize: 12 } }}
+  />
+
+  <Typography className="label-typography"  sx={{ mb: 0.5 }}>
+    MWS AUTH TOKEN
+  </Typography>
+  <TextField
+  label="MWS AUTH TOKEN"
+    variant="outlined"
+    name="MWS_AUTH_TOKEN"
+    value={mwsAuthToken}
+    onChange={handleInputChange}
+    fullWidth
+    size="small"
+    margin="dense"
+     className="input-syn-amazon"
+    inputProps={{ style: { fontSize: 12 } }}
+    InputLabelProps={{ style: { fontSize: 12 } }}
+  />
+
+  <Button
+    type="submit"
+    variant="contained"
+    className="settings-submit-button"
+
+  >
+    Save
+  </Button>
+</Box>
+
+
             </Box>
           </div>
         </CustomTabPanel>
 
-        {/* Tab Panel for Amazon Sync */}
-        <CustomTabPanel value={value} index={1}>
-          <div className="amazon-sync-card">
-        <Card>
-          <Card.Section>
-            <div className="card-heading">
-              <h3 className='text-white'>Sync Settings</h3>
-            </div>
-            <div className="sync-prod sync-flexbox">
-                  <div className='sync-title'>
-                    Sync Price
-                  </div>
-                <div className="flipswitch">
-                <input
-                  defaultChecked
-                  id="fs"
-                  className="flipswitch-cb"
-                  name="flipswitch"
-                  type="checkbox"
-                />
-                <label htmlFor="fs" className="flipswitch-label">
-                  <div className="flipswitch-inner"></div>
-                  <div className="flipswitch-switch"></div>
-                </label>
-              </div>
-            </div>
-      
-            <div className="sync-prod sync-flexbox">
-                  <div className='sync-title'>
-                    Sync Inventory
-                  </div>
-                <div className="flipswitch">
-                <input
-                  defaultChecked
-                  id="fsi"
-                  className="flipswitch-cb"
-                  name="flipswitch"
-                  type="checkbox"
-                />
-                <label htmlFor="fsi" className="flipswitch-label">
-                  <div className="flipswitch-inner"></div>
-                  <div className="flipswitch-switch"></div>
-                </label>
-              </div>
-            </div>
-      
-            <div className="sync-prod sync-flexbox">
-                  <div className='sync-title'>
-                    Auto Sync 
-                  </div>
-                <div className="flipswitch">
-                <input
-                  defaultChecked
-                  id="fsa"
-                  className="flipswitch-cb"
-                  name="flipswitch"
-                  type="checkbox"
-                />
-                <label htmlFor="fsa" className="flipswitch-label">
-                  <div className="flipswitch-inner"></div>
-                  <div className="flipswitch-switch"></div>
-                </label>
-              </div>
-            </div>
-      
 
-          </Card.Section>
-        </Card>
-          </div>
-        </CustomTabPanel>
       </Box>
     </>
   );

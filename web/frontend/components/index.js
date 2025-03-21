@@ -7,7 +7,7 @@ export { Inventorybtn } from "./inventorymapping";
 export { ProductOrderTable } from "./ProductOrderTable";
 export { DailySyncLogTable } from "./DailySyncLogTable";
 export { SyncGraph } from "./DailySyncGraph";
-export { Topbar } from "./Topbar";
+export { Topbar } from "./topbar";
 export { LowInventoryProducts } from "./LowInventoryProducts";
 export { OrderTrackingModule } from "./OrderTrackingModule";
 export { OrderEditModule } from "./OrderEditModule";

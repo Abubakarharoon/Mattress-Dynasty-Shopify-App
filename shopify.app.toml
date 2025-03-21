@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-application_url = "https://endorsement-robots-year-operator.trycloudflare.com"
+application_url = "https://guestbook-historical-spare-enters.trycloudflare.com"
 embedded = true
 name = "Mattress Dynasity"
 handle = "lean-policy-app-3"
@@ -20,10 +20,13 @@ scopes = "read_customers,read_inventory,read_orders,read_products,write_customer
 
 [auth]
 redirect_urls = [
-  "https://endorsement-robots-year-operator.trycloudflare.com/auth/callback",
-  "https://endorsement-robots-year-operator.trycloudflare.com/auth/shopify/callback",
-  "https://endorsement-robots-year-operator.trycloudflare.com/api/auth/callback"
+  "https://guestbook-historical-spare-enters.trycloudflare.com/auth/callback",
+  "https://guestbook-historical-spare-enters.trycloudflare.com/auth/shopify/callback",
+  "https://guestbook-historical-spare-enters.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
 embedded = true
+
+[app_preferences]
+url = "https://d1db-2400-adc7-15b-c000-85da-a75b-5c75-dcd7.ngrok-free.app/"

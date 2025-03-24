@@ -3,7 +3,7 @@
 .env.*
 
 # Dependency directory
-node_modules/
+node_modules
 
 # Test coverage directory
 coverage
@@ -29,4 +29,4 @@ web/database.sqlite
 
 # Ignore shopify files created during app dev
 .shopify/*
-.shopify.locknode_modules/
+.shopify.lock

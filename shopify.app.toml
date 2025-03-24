@@ -1,11 +1,9 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "9b353e9ce24bdd2c71d6ea8a90d21ecf"
-<<<<<<< HEAD
-application_url = "https://sec-sri-flesh-pricing.trycloudflare.com"
-=======
-application_url = "https://mattress-dynasty-shopify-app-frontend-v39j.vercel.app/"
->>>>>>> 5b3dc3b648780b94ded09938fa0b9956cb210dc3
+
+application_url = "https://mattress-dynasty-shopify-app-frontend.vercel.app/"
+
 embedded = true
 name = "Mattress Dynasity"
 handle = "lean-policy-app-3"
@@ -24,15 +22,11 @@ scopes = "read_customers,read_inventory,read_orders,read_products,write_customer
 
 [auth]
 redirect_urls = [
-<<<<<<< HEAD
-  "https://sec-sri-flesh-pricing.trycloudflare.com/auth/callback",
-  "https://sec-sri-flesh-pricing.trycloudflare.com/auth/shopify/callback",
-  "https://sec-sri-flesh-pricing.trycloudflare.com/api/auth/callback"
-=======
-  "https://mattress-dynasty-shopify-app-frontend-v39j.vercel.app/auth/callback",
-  "https://mattress-dynasty-shopify-app-frontend-v39j.vercel.app/auth/shopify/callback",
-  "https://mattress-dynasty-shopify-app-frontend-v39j.vercel.app/api/auth/callback"
->>>>>>> 5b3dc3b648780b94ded09938fa0b9956cb210dc3
+
+  "https://mattress-dynasty-shopify-app-frontend.vercel.app/auth/callback",
+  "https://mattress-dynasty-shopify-app-frontend.vercel.app/auth/shopify/callback",
+  "https://mattress-dynasty-shopify-app-frontend.vercel.app/api/auth/callback"
+
 ]
 
 [pos]

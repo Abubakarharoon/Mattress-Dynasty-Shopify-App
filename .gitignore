@@ -29,4 +29,4 @@ web/database.sqlite
 
 # Ignore shopify files created during app dev
 .shopify/*
-.shopify.lock
+.shopify.locknode_modules/
